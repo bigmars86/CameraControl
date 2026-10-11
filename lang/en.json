@@ -1,0 +1,80 @@
+{
+  "app": {
+    "alreadyRunning": "Camera Control is already running.\n\nPlease use the window that is already open."
+  },
+  "header": {
+    "title": "Camera Control Interface",
+    "themeToggle": "Toggle theme",
+    "settings": "Settings"
+  },
+  "dialog": {
+    "cancel": "Cancel"
+  },
+  "config": {
+    "title": "Camera Configuration",
+    "cameraIP": "Camera IP Address:",
+    "username": "Username:",
+    "password": "Password:",
+    "passwordPlaceholder": "Leave empty to keep the current password",
+    "saveFailed": "Settings could not be saved to {file}.",
+    "language": "Language:",
+    "speedSettings": "Speed Settings",
+    "panSpeed": "Pan:",
+    "tiltSpeed": "Tilt:",
+    "zoomSpeed": "Zoom:",
+    "connectionSettings": "Connection",
+    "retryInterval": "Retry connection every (s):",
+    "maxDelay": "Max. preview delay (s):",
+    "programSettings": "Program",
+    "browser": "Browser:",
+    "port": "Web server port:",
+    "programHint": "Changes take effect the next time CameraControl starts.",
+    "saveButton": "Save Configuration",
+    "presetInfoTitle": "Preset pictures",
+    "presetInfoLine1": "Add presets with + in the preset list. Their pictures are stored in this folder:",
+    "presetInfoLine2": "You can also copy pictures into it, named like 1-5.jpg (key 1 calls preset 5) or 7.jpg (preset 7).",
+    "openPresetFolder": "Open folder"
+  },
+  "cameraPreview": {
+    "disconnected": "Disconnected",
+    "connected": "Connected",
+    "connecting": "Connecting...",
+    "unconfigured": "Not configured",
+    "offlineTitle": "Camera not reachable",
+    "offlineHint": "Check power and network. Reconnecting automatically.",
+    "unconfiguredTitle": "No camera configured",
+    "unconfiguredHint": "Open the settings (gear icon) and enter the address of the camera."
+  },
+  "cameraControls": {
+    "title": "Camera Controls"
+  },
+  "presets": {
+    "title": "Presets",
+    "empty": "No presets yet. Point the camera at a position, then click + to save it with a picture.",
+    "addTooltip": "Add preset",
+    "addTitle": "Add preset",
+    "slot": "Preset number (1-255):",
+    "key": "Hotkey (optional):",
+    "image": "Picture (optional):",
+    "imageHint": "Without a file, the current preview picture is used.",
+    "storePosition": "Store the current camera position in this preset",
+    "saveButton": "Save",
+    "replaceButton": "Replace",
+    "deleteButton": "Remove",
+    "saveTooltip": "Store the current position",
+    "savingTooltip": "Saving...",
+    "savedTooltip": "Saved",
+    "saveFailedTooltip": "Saving failed",
+    "deleteTooltip": "Remove preset",
+    "confirmSave": "Store the current camera position in preset {preset}?",
+    "confirmReplace": "Preset {preset} already exists. Replace it?",
+    "confirmDelete": "Remove preset {preset} from the list? The position stays stored in the camera.",
+    "errorSlot": "Enter a preset number from 1 to 255.",
+    "errorKey": "The hotkey must be a single letter or digit.",
+    "errorKeyInUse": "Key {key} is already used by preset {preset}.",
+    "errorFileSize": "The picture must be smaller than 5 MB.",
+    "errorNoImage": "No preview picture available. Choose a picture file.",
+    "errorPosition": "The camera position could not be stored.",
+    "errorUpload": "The picture could not be saved."
+  }
+}

@@ -1,0 +1,2 @@
+git-cliff==2.14.2
+pre-commit==4.6.2

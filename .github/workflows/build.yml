@@ -1,0 +1,55 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # Used by the release workflow
+  workflow_call:
+    inputs:
+      ref:
+        description: Commit to build
+        required: true
+        type: string
+      version:
+        description: Version stamped into the EXE (x.y.z)
+        required: true
+        type: string
+    outputs:
+      artifact-id:
+        description: ID of the uploaded CameraControl artifact
+        value: ${{ jobs.build.outputs.artifact-id }}
+
+permissions: {}
+
+jobs:
+  build:
+    name: Build CameraControl.exe
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    outputs:
+      artifact-id: ${{ steps.upload.outputs.artifact-id }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.ref }}
+          persist-credentials: false
+
+      - name: Install ps2exe
+        shell: powershell
+        run: Install-Module ps2exe -RequiredVersion 1.0.18 -Scope CurrentUser -Force
+
+      - name: Build
+        shell: powershell
+        env:
+          VERSION: ${{ inputs.version || '0.0.0' }}
+        run: .\build.ps1 -Version $env:VERSION
+
+      - name: Upload
+        id: upload
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: CameraControl
+          path: CameraControl.exe
+          if-no-files-found: error

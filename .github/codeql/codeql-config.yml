@@ -1,0 +1,4 @@
+name: CodeQL config
+paths-ignore:
+  # Vendored third-party player (see THIRD_PARTY_NOTICES.md)
+  - js/websocket.js

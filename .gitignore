@@ -1,0 +1,25 @@
+# Build output
+/CameraControl.exe
+/CameraControl.exe.sha256
+/_build_standalone.ps1
+
+# Runtime files: settings (camera address, encrypted password), logs and preset images - never commit.
+# The app keeps them in %LOCALAPPDATA%\CameraControl; older versions kept them in this folder.
+/camera_config.json
+*.log
+/imgs/presets/
+
+# Secrets and certificates
+.env
+.env.*
+*.pfx
+*.p12
+*.pem
+*.key
+
+# Tooling and OS files
+node_modules/
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

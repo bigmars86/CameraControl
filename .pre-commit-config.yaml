@@ -1,0 +1,84 @@
+# Setup once:  pip install -r requirements-dev.txt && pre-commit install
+# All files:   pre-commit run --all-files
+# Hook versions are updated by Dependabot (see .github/dependabot.yml).
+
+# pre-commit install also sets up the commit message check (Conventional Commits, see CONTRIBUTING.md)
+default_install_hook_types: [pre-commit, commit-msg]
+# Hooks without an explicit stage check files only, not the commit message
+default_stages: [pre-commit]
+
+# Vendored third-party player, kept byte-for-byte as shipped (see THIRD_PARTY_NOTICES.md)
+exclude: ^js/websocket\.js$
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c # frozen: v6.0.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=512]
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: trailing-whitespace
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: 83d9cd684c87d95d656c1458ef04895a7f1cbd8e # frozen: v8.30.1
+    hooks:
+      - id: gitleaks
+      # Whole history, run by CI: pre-commit run --hook-stage manual gitleaks-history
+      - id: gitleaks
+        alias: gitleaks-history
+        name: Detect hardcoded secrets (all commits)
+        entry: gitleaks git --redact --verbose
+        stages: [manual]
+
+  - repo: https://github.com/rbubley/mirrors-prettier
+    rev: ef4a397f916211b4a39ccf9d3d9cbb6562157251 # frozen: v3.9.9
+    hooks:
+      - id: prettier
+
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: 10e29bbf6681d33cb90d555ea2f7ea71e162d259 # frozen: v10.12.0
+    hooks:
+      - id: eslint
+        files: ^js/.*\.js$
+        additional_dependencies:
+          - eslint@10.12.0
+          - '@eslint/js@10.0.1'
+          - globals@17.13.0
+
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0494aa7fa1314e98913a41227d8f0a515b2c1049 # frozen: 0.38.2
+    hooks:
+      - id: check-github-workflows
+      - id: check-dependabot
+
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: 91ab4bf57e58b32adf1a122681f6ebe164d081c8 # frozen: v4.4.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+
+  - repo: https://github.com/zizmorcore/zizmor-pre-commit
+    rev: fa412071e4f5d44d44f9e365f4676f9df92456a2 # frozen: v1.30.1
+    hooks:
+      - id: zizmor
+
+  - repo: local
+    hooks:
+      - id: ps1-ascii-only
+        name: PowerShell files are ASCII-only (Windows PowerShell reads them as ANSI)
+        language: pygrep
+        entry: '[^\x00-\x7F]'
+        types: [powershell]
+      - id: psscriptanalyzer
+        name: PSScriptAnalyzer
+        language: system
+        entry: pwsh -NoProfile -NonInteractive -File scripts/Invoke-ScriptAnalyzer.ps1
+        types: [powershell]

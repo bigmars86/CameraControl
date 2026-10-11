@@ -1,0 +1,80 @@
+{
+  "app": {
+    "alreadyRunning": "Camera Control läuft bereits.\n\nBitte das bereits geöffnete Fenster verwenden."
+  },
+  "header": {
+    "title": "Kamera-Steuerungsschnittstelle",
+    "themeToggle": "Design wechseln",
+    "settings": "Einstellungen"
+  },
+  "dialog": {
+    "cancel": "Abbrechen"
+  },
+  "config": {
+    "title": "Kamera-Konfiguration",
+    "cameraIP": "Kamera-IP-Adresse:",
+    "username": "Benutzername:",
+    "password": "Passwort:",
+    "passwordPlaceholder": "Leer lassen, um das aktuelle Passwort zu behalten",
+    "saveFailed": "Die Einstellungen konnten nicht in {file} gespeichert werden.",
+    "language": "Sprache:",
+    "speedSettings": "Geschwindigkeitseinstellungen",
+    "panSpeed": "Schwenken:",
+    "tiltSpeed": "Neigen:",
+    "zoomSpeed": "Zoom:",
+    "connectionSettings": "Verbindung",
+    "retryInterval": "Neuer Verbindungsversuch alle (s):",
+    "maxDelay": "Max. Verzögerung der Vorschau (s):",
+    "programSettings": "Programm",
+    "browser": "Browser:",
+    "port": "Webserver-Port:",
+    "programHint": "Änderungen gelten ab dem nächsten Start von CameraControl.",
+    "saveButton": "Konfiguration speichern",
+    "presetInfoTitle": "Preset-Bilder",
+    "presetInfoLine1": "Presets fügen Sie mit + in der Preset-Liste hinzu. Ihre Bilder liegen in diesem Ordner:",
+    "presetInfoLine2": "Sie können auch Bilder hineinkopieren, benannt wie 1-5.jpg (Taste 1 ruft Preset 5 auf) oder 7.jpg (Preset 7).",
+    "openPresetFolder": "Ordner öffnen"
+  },
+  "cameraPreview": {
+    "disconnected": "Getrennt",
+    "connected": "Verbunden",
+    "connecting": "Verbinde...",
+    "unconfigured": "Nicht eingerichtet",
+    "offlineTitle": "Kamera nicht erreichbar",
+    "offlineHint": "Stromversorgung und Netzwerk prüfen. Die Verbindung wird automatisch erneut versucht.",
+    "unconfiguredTitle": "Keine Kamera eingerichtet",
+    "unconfiguredHint": "Öffnen Sie die Einstellungen (Zahnrad) und geben Sie die Adresse der Kamera ein."
+  },
+  "cameraControls": {
+    "title": "Kamerasteuerung"
+  },
+  "presets": {
+    "title": "Presets",
+    "empty": "Noch keine Presets. Richten Sie die Kamera aus und klicken Sie auf +, um die Position mit Bild zu speichern.",
+    "addTooltip": "Preset hinzufügen",
+    "addTitle": "Preset hinzufügen",
+    "slot": "Preset-Nummer (1-255):",
+    "key": "Taste (optional):",
+    "image": "Bild (optional):",
+    "imageHint": "Ohne Datei wird das aktuelle Vorschaubild verwendet.",
+    "storePosition": "Aktuelle Kameraposition in diesem Preset speichern",
+    "saveButton": "Speichern",
+    "replaceButton": "Ersetzen",
+    "deleteButton": "Entfernen",
+    "saveTooltip": "Aktuelle Position speichern",
+    "savingTooltip": "Wird gespeichert...",
+    "savedTooltip": "Gespeichert",
+    "saveFailedTooltip": "Speichern fehlgeschlagen",
+    "deleteTooltip": "Preset entfernen",
+    "confirmSave": "Aktuelle Kameraposition in Preset {preset} speichern?",
+    "confirmReplace": "Preset {preset} gibt es schon. Ersetzen?",
+    "confirmDelete": "Preset {preset} aus der Liste entfernen? Die Position bleibt in der Kamera gespeichert.",
+    "errorSlot": "Geben Sie eine Preset-Nummer von 1 bis 255 ein.",
+    "errorKey": "Die Taste muss ein einzelner Buchstabe oder eine Ziffer sein.",
+    "errorKeyInUse": "Die Taste {key} ist schon Preset {preset} zugeordnet.",
+    "errorFileSize": "Das Bild muss kleiner als 5 MB sein.",
+    "errorNoImage": "Kein Vorschaubild verfügbar. Wählen Sie eine Bilddatei.",
+    "errorPosition": "Die Kameraposition konnte nicht gespeichert werden.",
+    "errorUpload": "Das Bild konnte nicht gespeichert werden."
+  }
+}
