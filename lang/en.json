@@ -1,0 +1,63 @@
+{
+  "languageName": "English",
+  "app": {
+    "alreadyRunning": "Camera Control is already running.\n\nPlease use the window that is already open."
+  },
+  "header": {
+    "title": "Camera Control Interface"
+  },
+  "config": {
+    "title": "Camera Configuration",
+    "cameraIP": "Camera IP Address:",
+    "username": "Username:",
+    "password": "Password:",
+    "passwordPlaceholder": "Leave empty to keep the current password",
+    "saveFailed": "Settings could not be saved to {file}.\n\nPlace CameraControl.exe in a folder you can write to (not under Program Files).",
+    "language": "Language:",
+    "speedSettings": "Speed Settings",
+    "panSpeed": "Pan:",
+    "tiltSpeed": "Tilt:",
+    "zoomSpeed": "Zoom:",
+    "connectionSettings": "Connection",
+    "retryInterval": "Retry connection every (s):",
+    "maxDelay": "Max. preview delay (s):",
+    "saveButton": "Save Configuration",
+    "presetInfoTitle": "Preset Files",
+    "presetInfoLine1": "Place preset images in imgs/presets/ next to CameraControl.exe.",
+    "presetInfoLine2": "Use names like 1-5.jpg (key 1 calls preset 5) or 7.jpg (preset 7)."
+  },
+  "cameraPreview": {
+    "title": "Camera Preview",
+    "disconnected": "Disconnected",
+    "connected": "Connected",
+    "connecting": "Connecting...",
+    "offlineTitle": "Camera not reachable",
+    "offlineHint": "Check power and network. Reconnecting automatically."
+  },
+  "cameraControls": {
+    "title": "Camera Controls",
+    "ptzTitle": "Pan/Tilt/Zoom Controls"
+  },
+  "presets": {
+    "title": "Presets",
+    "loading": "Loading presets...",
+    "notFound": "No preset images found.",
+    "helpText": "Add images like 1-5.jpg (key=1, preset=5), d-23.png (key=d, preset=23), or 7.jpg (preset=7, no key) to the imgs/presets/ folder.",
+    "saveTooltip": "save",
+    "savingTooltip": "saving...",
+    "savedTooltip": "saved",
+    "saveFailedTooltip": "save failed",
+    "confirmSave": "Save current camera position to preset {preset}?",
+    "keyboardControls": "Keyboard Controls:",
+    "numpadHelp": "1-9 for PTZ movement (like phone keypad), + and - for zoom",
+    "presetsHelp": "Click preset images or use assigned keys shown on each preset",
+    "fileFormat": "Use key-preset.jpg (e.g., 1-5.jpg, a-3.jpg) to control display order by key"
+  },
+  "keyboardHelp": {
+    "title": "Keyboard Shortcuts:",
+    "arrowKeys": "Arrow Keys: Pan/Tilt camera",
+    "pageKeys": "Page Up/Down: Zoom in/out",
+    "numberKeys": "Number Keys (0-9): Call presets",
+    "space": "Space: Stop movement"
+  }
+}

@@ -1,0 +1,5 @@
+# Vendored third-party code, kept as shipped
+js/websocket.js
+# Official license texts
+LICENSE
+licenses/

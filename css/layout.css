@@ -1,0 +1,248 @@
+/**
+ * Layout Styles
+ * Container, header, and main grid layout optimized for narrow viewports
+ */
+
+/* Container - fills viewport */
+.container {
+    width: max(100%, 200px);
+    min-width: 200px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 10px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    flex-shrink: 0;
+}
+
+header h1 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.header-actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.icon-btn {
+    background: var(--bg-elevated);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    background: var(--bg-hover);
+    color: var(--accent);
+    border-color: var(--border-focus);
+}
+
+.config-btn {
+    background: var(--bg-elevated);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.config-btn:hover {
+    background: var(--bg-hover);
+    color: var(--accent);
+    border-color: var(--border-focus);
+}
+
+/* Main grid layout - single column for narrow, side-by-side for wide */
+.main-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Bottom panel: presets + controls side by side */
+.bottom-panel {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+/* Camera Preview Section */
+.camera-preview {
+    background-color: var(--bg-surface);
+    border-radius: var(--radius-md);
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cameraStream {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #000;
+}
+
+.stream-overlay {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.status {
+    padding: 3px 8px;
+    border-radius: 10px;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status.connected {
+    background-color: var(--success-color);
+}
+
+.status.disconnected {
+    background-color: var(--danger-color);
+}
+
+.status.connecting {
+    background-color: var(--warning-color);
+    color: #1c1917;
+}
+
+/* Shown over the (black) video while the camera is not reachable */
+.stream-offline {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 16px;
+    text-align: center;
+    color: #e2e8f0;
+    pointer-events: none;
+}
+
+.stream-offline[hidden] {
+    display: none;
+}
+
+.stream-offline svg {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 6px;
+    color: #94a3b8;
+}
+
+.stream-offline p {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.stream-offline .stream-offline-hint {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #94a3b8;
+}
+
+/* Keyboard Help - collapsed by default to save space */
+.keyboard-help {
+    background-color: var(--bg-surface);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent);
+    flex-shrink: 0;
+    display: none;
+}
+
+.keyboard-help h4 {
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.keyboard-help ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.keyboard-help li {
+    padding: 3px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.keyboard-help li:last-child {
+    border-bottom: none;
+}
+
+/* Wide layout */
+@media (min-width: 800px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 16px 20px;
+    }
+
+    .main-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 16px;
+    }
+
+    .bottom-panel {
+        gap: 16px;
+    }
+
+    .video-container {
+        aspect-ratio: 16 / 9;
+    }
+
+    .keyboard-help {
+        display: block;
+    }
+}

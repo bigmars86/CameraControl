@@ -1,0 +1,110 @@
+/**
+ * Responsive Styles
+ * Optimized for narrow viewports (quarter of 19" screen ~480px)
+ * and various other breakpoints
+ */
+
+/* Very narrow screens (<380px) - stack bottom panel vertically */
+@media (max-width: 380px) {
+    .container {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .bottom-panel {
+        flex-direction: column;
+    }
+
+    .ptz-grid {
+        grid-template-columns: repeat(3, 36px);
+        gap: 4px;
+    }
+
+    .ptz-btn,
+    .zoom-btn,
+    .zoom-spacer {
+        width: 36px;
+        height: 36px;
+    }
+
+    .presets-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    header h1 {
+        font-size: 0.95rem;
+    }
+}
+
+/* Narrow screens (380px-550px) - primary target: 1/4 of 19" screen */
+@media (min-width: 380px) and (max-width: 550px) {
+    .presets-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Hide preset help on narrow layouts to save space */
+@media (max-width: 799px) {
+    .preset-help {
+        display: none;
+    }
+}
+
+/* Medium screens (550px - 799px) */
+@media (min-width: 550px) and (max-width: 799px) {
+    .container {
+        padding: 14px;
+    }
+
+    .presets-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Short viewport - make everything more compact */
+@media (max-height: 700px) {
+    .container {
+        gap: 6px;
+        padding: 8px;
+    }
+
+    header {
+        padding: 4px 0;
+    }
+
+    .camera-controls {
+        padding: 10px;
+    }
+
+    .camera-controls h2 {
+        margin-bottom: 8px;
+    }
+
+    .ptz-grid {
+        gap: 3px;
+    }
+
+    .presets-section {
+        padding: 10px;
+    }
+
+    .presets-section h2 {
+        margin-bottom: 6px;
+    }
+
+    .presets-grid {
+        gap: 6px;
+    }
+}
+
+/* Extra wide screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .presets-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}

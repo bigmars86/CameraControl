@@ -1,0 +1,232 @@
+/**
+ * Controls Styles
+ * Compact PTZ controls, zoom controls optimized for narrow layouts
+ */
+
+/* Camera Controls Section */
+.camera-controls {
+    background-color: var(--bg-surface);
+    border-radius: var(--radius-md);
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.camera-controls h2 {
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.camera-controls h3 {
+    font-size: 0.8rem;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* PTZ Controls */
+.ptz-controls {
+    margin-bottom: 0;
+}
+
+.ptz-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 42px);
+    gap: 5px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.ptz-row {
+    display: contents;
+}
+
+.zoom-row {
+    display: contents;
+}
+
+.ptz-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-elevated);
+    color: var(--text-primary);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ptz-btn:hover {
+    background-color: var(--accent-dim);
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: scale(1.05);
+}
+
+.ptz-btn:active {
+    transform: scale(0.92);
+    background-color: var(--accent);
+    color: var(--bg-primary);
+}
+
+.ptz-btn.ptz-stop {
+    background-color: var(--bg-hover);
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+}
+
+.ptz-btn.ptz-stop:hover {
+    background-color: rgba(248, 113, 113, 0.15);
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+}
+
+/* Zoom Buttons in PTZ Grid */
+.zoom-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-elevated);
+    color: var(--text-primary);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zoom-spacer {
+    width: 42px;
+    height: 42px;
+}
+
+.zoom-btn:hover {
+    background-color: var(--accent-dim);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.zoom-btn:active {
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    transform: scale(0.92);
+}
+
+.zoom-btn.keyboard-active {
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    transform: scale(1.05);
+    box-shadow: 0 0 12px var(--accent-dim);
+}
+
+/* Camera not connected: PTZ and zoom are unavailable */
+.camera-offline .ptz-grid {
+    cursor: not-allowed;
+}
+
+.camera-offline .ptz-btn,
+.camera-offline .zoom-btn {
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+/* Legacy Zoom Controls (keeping for compatibility) */
+.zoom-controls {
+    margin-bottom: 16px;
+}
+
+.zoom-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-elevated);
+    color: var(--text-primary);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all var(--transition);
+}
+
+.control-btn:hover {
+    background-color: var(--accent-dim);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn-icon {
+    font-size: 1.1rem;
+}
+
+/* Keyboard active state for buttons */
+.ptz-btn.keyboard-active,
+.control-btn.keyboard-active {
+    background-color: var(--accent) !important;
+    color: var(--bg-primary) !important;
+    transform: scale(0.93);
+    box-shadow: 0 0 14px var(--accent-dim);
+}
+
+/* Speed Controls */
+.speed-controls {
+    margin-bottom: 16px;
+}
+
+.speed-sliders {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.slider-group {
+    display: grid;
+    grid-template-columns: 80px 1fr 30px;
+    align-items: center;
+    gap: 8px;
+}
+
+.slider-group label {
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text-secondary);
+}
+
+.slider-group input[type='range'] {
+    accent-color: var(--accent);
+    background-color: var(--bg-elevated);
+    height: 4px;
+    border-radius: 2px;
+}
+
+.slider-group span {
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--accent);
+}

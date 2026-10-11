@@ -1,0 +1,28 @@
+# Build output
+/CameraControl.exe
+/CameraControl.exe.sha256
+/_build_standalone.ps1
+
+# Runtime files: settings (camera address, encrypted password) and logs - never commit
+/camera_config.json
+*.log
+
+# Site-specific preset images (they belong next to CameraControl.exe, not into the repository)
+/imgs/presets/*
+!/imgs/presets/.gitkeep
+/imgs/backups/
+
+# Secrets and certificates
+.env
+.env.*
+*.pfx
+*.p12
+*.pem
+*.key
+
+# Tooling and OS files
+node_modules/
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

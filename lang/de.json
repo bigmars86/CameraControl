@@ -1,0 +1,63 @@
+{
+  "languageName": "Deutsch",
+  "app": {
+    "alreadyRunning": "Camera Control läuft bereits.\n\nBitte das bereits geöffnete Fenster verwenden."
+  },
+  "header": {
+    "title": "Kamera-Steuerungsschnittstelle"
+  },
+  "config": {
+    "title": "Kamera-Konfiguration",
+    "cameraIP": "Kamera-IP-Adresse:",
+    "username": "Benutzername:",
+    "password": "Passwort:",
+    "passwordPlaceholder": "Leer lassen, um das aktuelle Passwort zu behalten",
+    "saveFailed": "Die Einstellungen konnten nicht in {file} gespeichert werden.\n\nBitte CameraControl.exe in einen Ordner mit Schreibrechten legen (nicht unter „Programme“).",
+    "language": "Sprache:",
+    "speedSettings": "Geschwindigkeitseinstellungen",
+    "panSpeed": "Schwenken:",
+    "tiltSpeed": "Neigen:",
+    "zoomSpeed": "Zoom:",
+    "connectionSettings": "Verbindung",
+    "retryInterval": "Neuer Verbindungsversuch alle (s):",
+    "maxDelay": "Max. Verzögerung der Vorschau (s):",
+    "saveButton": "Konfiguration speichern",
+    "presetInfoTitle": "Preset-Dateien",
+    "presetInfoLine1": "Legen Sie Preset-Bilder in imgs/presets/ neben CameraControl.exe ab.",
+    "presetInfoLine2": "Verwenden Sie Namen wie 1-5.jpg (Taste 1 ruft Preset 5 auf) oder 7.jpg (Preset 7)."
+  },
+  "cameraPreview": {
+    "title": "Kamera-Vorschau",
+    "disconnected": "Getrennt",
+    "connected": "Verbunden",
+    "connecting": "Verbinde...",
+    "offlineTitle": "Kamera nicht erreichbar",
+    "offlineHint": "Stromversorgung und Netzwerk prüfen. Die Verbindung wird automatisch erneut versucht."
+  },
+  "cameraControls": {
+    "title": "Kamerasteuerung",
+    "ptzTitle": "Schwenken/Neigen/Zoom-Steuerung"
+  },
+  "presets": {
+    "title": "Voreinstellungen",
+    "loading": "Lade Voreinstellungen...",
+    "notFound": "Keine Voreinstellungsbilder gefunden.",
+    "helpText": "Fügen Sie Bilder wie 1-5.jpg (Taste=1, Voreinstellung=5), d-23.png (Taste=d, Voreinstellung=23) oder 7.jpg (Voreinstellung=7, keine Taste) im imgs/presets/ Ordner hinzu.",
+    "saveTooltip": "speichern",
+    "savingTooltip": "speichere...",
+    "savedTooltip": "gespeichert",
+    "saveFailedTooltip": "speichern fehlgeschlagen",
+    "confirmSave": "Aktuelle Kameraposition in Preset {preset} speichern?",
+    "keyboardControls": "Tastatursteuerung:",
+    "numpadHelp": "1-9 für PTZ-Bewegung (wie Telefontastatur), + und - für Zoom",
+    "presetsHelp": "Klicken Sie auf Voreinstellungsbilder oder verwenden Sie die zugewiesenen Tasten",
+    "fileFormat": "Verwenden Sie taste-voreinstellung.jpg (z.B. 1-5.jpg, a-3.jpg) um die Anzeigereihenfolge nach Taste zu steuern"
+  },
+  "keyboardHelp": {
+    "title": "Tastaturkürzel:",
+    "arrowKeys": "Pfeiltasten: Kamera schwenken/neigen",
+    "pageKeys": "Bild auf/ab: Hinein-/Herauszoomen",
+    "numberKeys": "Zahlentasten (0-9): Voreinstellungen aufrufen",
+    "space": "Leertaste: Bewegung stoppen"
+  }
+}

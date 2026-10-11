@@ -1,0 +1,36 @@
+name: Bug report
+description: Something does not work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please never paste passwords or other secrets. `CameraControl.log` (next to the EXE) does not contain the camera password, but check it for anything private before pasting.
+  - type: input
+    id: version
+    attributes:
+      label: CameraControl version
+      placeholder: v1.0.0
+    validations:
+      required: true
+  - type: input
+    id: camera
+    attributes:
+      label: Camera model and firmware
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Steps to reproduce, what you expected and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Log excerpt
+      description: Relevant lines from `CameraControl.log` next to `CameraControl.exe`.
+      render: text

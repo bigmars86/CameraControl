@@ -1,0 +1,218 @@
+/**
+ * Base Styles
+ * Modern dark/light theme with clean aesthetics
+ */
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0f1419;
+    --bg-surface: #1c2128;
+    --bg-elevated: #242b33;
+    --bg-hover: #2d353e;
+    --accent: #22d3ee;
+    --accent-dim: rgba(34, 211, 238, 0.15);
+    --accent-hover: #06b6d4;
+    --success-color: #34d399;
+    --warning-color: #fbbf24;
+    --danger-color: #f87171;
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --text-muted: #636e7b;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-focus: rgba(34, 211, 238, 0.4);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light theme */
+[data-theme='light'] {
+    --bg-primary: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-elevated: #f1f5f9;
+    --bg-hover: #e2e8f0;
+    --accent: #0891b2;
+    --accent-dim: rgba(8, 145, 178, 0.1);
+    --accent-hover: #0e7490;
+    --success-color: #059669;
+    --warning-color: #d97706;
+    --danger-color: #dc2626;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --border-color: rgba(0, 0, 0, 0.08);
+    --border-focus: rgba(8, 145, 178, 0.4);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+html {
+    min-width: 200px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Theme toggle icon visibility */
+[data-theme='light'] .icon-sun {
+    display: none;
+}
+[data-theme='light'] .icon-moon {
+    display: block;
+}
+.icon-sun {
+    display: block;
+}
+.icon-moon {
+    display: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-muted);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* Loading and error states */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--danger-color);
+    text-align: center;
+}
+
+.error-icon {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+/* Animation for button presses */
+@keyframes buttonPress {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.93);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-pressed,
+.btn-active {
+    animation: buttonPress 0.15s ease;
+    background-color: var(--accent) !important;
+    color: var(--bg-primary) !important;
+    transform: scale(0.93);
+}
+
+/* Confirm dialog */
+.confirm-dialog {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-content {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    max-width: 300px;
+    width: 90%;
+}
+
+.confirm-content p {
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.confirm-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.confirm-btn {
+    padding: 8px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition);
+}
+
+.confirm-yes {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.confirm-yes:hover {
+    background: var(--accent-hover);
+}
+
+.confirm-no {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+}
+
+.confirm-no:hover {
+    background: var(--bg-hover);
+}

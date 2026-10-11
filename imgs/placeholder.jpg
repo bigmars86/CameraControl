@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #ecf0f1;
+            color: #2c3e50;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .placeholder {
+            width: 160px;
+            height: 120px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h2>Placeholder for Preset Images</h2>
+    <p>Place your preset images (1.jpg, 2.jpg, etc.) in the presets folder.</p>
+    <div class="placeholder">Preset Image</div>
+    <p>The camera control interface will automatically load these images to show preset positions.</p>
+</body>
+</html>
